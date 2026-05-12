@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر الجودة - منتجات طبيعية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- تأثير توقع الأحجار الكريمة -->
+    <canvas id="canvas" class="gems-canvas"></canvas>
+
+    <!-- رأس الصفحة -->
+    <header class="header">
+        <div class="header-container">
+            <h1 class="logo">✨ متجر الجودة ✨</h1>
+            <div class="header-actions">
+                <button id="cart-btn" class="cart-button">
+                    🛒 السلة <span class="cart-count" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- القائمة -->
+    <nav class="nav">
+        <div class="nav-container">
+            <button class="nav-btn active" data-category="all">الكل</button>
+            <button class="nav-btn" data-category="nuts">المكسرات</button>
+            <button class="nav-btn" data-category="seeds">البذور والعسل</button>
+            <button class="nav-btn" data-category="spices">البهارات</button>
+        </div>
+    </nav>
+
+    <!-- المتجر الرئيسي -->
+    <main class="main-container">
+        <div class="products-container" id="products-container">
+            <!-- سيتم ملء المنتجات هنا بواسطة JavaScript -->
+        </div>
+    </main>
+
+    <!-- سلة التسوق (Modal) -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>سلة التسوق</h2>
+                <button class="close-btn" id="close-cart">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- سيتم ملء المنتجات المختارة هنا -->
+            </div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>الإجمالي:</span>
+                    <span id="total-price" class="total-price">0 جنيه</span>
+                </div>
+                <button class="checkout-btn" id="checkout-btn">إتمام الشراء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- نموذج البيانات (Modal) -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content checkout-form">
+            <div class="modal-header">
+                <h2>تفاصيل الطلب</h2>
+                <button class="close-btn" id="close-checkout">&times;</button>
+            </div>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="customer-name">الاسم الكامل:</label>
+                    <input type="text" id="customer-name" required placeholder="أدخل اسمك الكامل">
+                </div>
+                <div class="form-group">
+                    <label for="customer-phone">رقم الهاتف:</label>
+                    <input type="tel" id="customer-phone" required placeholder="01XXXXXXXXX">
+                </div>
+                <div class="form-group">
+                    <label for="customer-address">العنوان:</label>
+                    <textarea id="customer-address" required placeholder="أدخل عنوانك كاملاً"></textarea>
+                </div>
+                <div class="order-summary">
+                    <h3>ملخص الطلب:</h3>
+                    <div id="order-items-summary"></div>
+                    <div class="summary-total">
+                        <strong>الإجمالي: <span id="order-total">0</span> جنيه</strong>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">إرسال إلى WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
